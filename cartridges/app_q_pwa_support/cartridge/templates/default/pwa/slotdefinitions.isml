@@ -1,0 +1,2 @@
+<iscomment>This template is unused, it simply defined the slots for BM consumption</iscomment>
+<isslot id="pwa-global-header" context="global" description="Above the site content" />

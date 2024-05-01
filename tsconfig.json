@@ -1,0 +1,35 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": ".",
+        "checkJs": false,
+        "declaration": true,
+        "declarationMap": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "isolatedModules": true,
+        "jsx": "react-jsx",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "module": "esnext",
+        "moduleResolution": "node",
+        "noFallthroughCasesInSwitch": true,
+        "outDir": "./dist",
+        "paths": {
+            "@irb/components/*": ["overrides/app/components/*"],
+            "@irb/theme/*": ["overrides/app/theme/*"],
+            "@irb/hooks/*": ["overrides/app/hooks/*"],
+            "@irb/types": ["overrides/app/types"],
+            "@irb/types/*": ["overrides/app/types/*"],
+            "@irb/utils/*": ["overrides/app/utils/*"]
+        },
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "strict": true,
+        "target": "es2016",
+        "types": ["@testing-library/jest-dom", "jest", "node"]
+    },
+    "exclude": ["./dist"],
+    "include": ["./**/*.ts", "./**/*.tsx"]
+}

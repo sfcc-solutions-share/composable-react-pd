@@ -1,0 +1,27 @@
+{
+    "name":"Headless Page",
+    "description":"For PWA kit usage",
+    "region_definitions":[
+      {
+        "id":"main",
+        "name":"Main Region",
+        "component_type_inclusions": [
+          {"type_id": "headless.carousel"},
+          {"type_id": "headless.banner"},
+          {"type_id": "headless.imageWithTitle"},
+          {"type_id": "headless.popularCategories"},
+          {"type_id": "headless.3column"},
+          {"type_id": "headless.sectionHeader"},
+          {"type_id": "headless.einsteinProducts"},
+          {"type_id": "headless.productScroller"},
+          {"type_id": "headless.contentCard"},
+          {"type_id": "headless.rawJSX"},
+          {"type_id": "headless.grid"},
+          {"type_id": "headless.image"},
+          {"type_id": "headless.productTile"},
+          {"type_id": "headless.videoBanner"},
+          {"type_id": "headless.videoContentCard"}
+        ]
+      }
+    ]
+}

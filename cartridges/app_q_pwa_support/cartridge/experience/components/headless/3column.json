@@ -1,0 +1,49 @@
+{
+  "name": "3column",
+  "description": "3 Column Component",
+  "group": "Headless",
+  "attribute_definition_groups": [
+    {
+      "id": "advanced",
+      "name": "Advanced Overrides",
+      "attribute_definitions": [
+        {
+          "id": "__containerStyles",
+          "name": "Container Style Config",
+          "type": "custom",
+          "editor_definition": {
+            "type": "styles.styleEditor"
+          },
+          "required": false
+        },
+        {
+          "id": "themeOverrides",
+          "name": "Chakra Theme Overrides",
+          "type": "custom",
+          "editor_definition": {
+            "type": "codeeditor.codeeditor",
+            "configuration": {
+              "language": "javascript-jsx",
+              "validateJavascript": true
+            }
+          },
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": [
+    {
+      "id": "main",
+      "name": "main",
+      "max_components": 3,
+      "component_type_inclusions": [
+        {"type_id": "headless.banner"},
+        {"type_id": "headless.rawJSX"},
+        {"type_id": "headless.carousel"},
+        {"type_id": "headless.productTile"},
+        {"type_id": "headless.image"}
+      ]
+    }
+  ]
+}

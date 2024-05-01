@@ -1,0 +1,89 @@
+{
+  "name": "Theme",
+  "description": "Theme for composable storefronts",
+  "group": "Headless",
+  "attribute_definition_groups": [
+    {
+      "id": "logo",
+      "name": "Logo Files",
+      "attribute_definitions": [
+        {
+          "id": "logo",
+          "name": "Logo Image",
+          "type": "image",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "colors",
+      "name": "Theme Colors",
+      "attribute_definitions": [
+        {
+          "id": "primaryColor",
+          "name": "Primary Color",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "secondaryColor",
+          "name": "Secondary Color",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "textColor",
+          "name": "Text Color",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "footerFGColor",
+          "name": "Footer FG Color",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "footerBGColor",
+          "name": "Footer BG Color",
+          "type": "string",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "advanced",
+      "name": "Advanced Overrides",
+      "attribute_definitions": [
+        {
+          "id": "jsonTheme",
+          "name": "Chakra Theme Overrides",
+          "type": "custom",
+          "editor_definition": {
+            "type": "codeeditor.codeeditor",
+            "configuration": {
+              "language": "javascript-jsx",
+              "validateJavascript": true
+            }
+          },
+          "required": false
+        },
+        {
+          "id": "customStyles",
+          "name": "Custom App Global Styles",
+          "type": "text",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": [
+    {
+      "id":"addons",
+      "name":"Addons",
+      "component_type_inclusions": [
+        {"type_id": "headless.einsteinChatBot"}
+      ]
+    }
+  ]
+}

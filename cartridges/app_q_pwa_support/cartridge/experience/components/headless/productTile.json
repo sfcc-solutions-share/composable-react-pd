@@ -1,0 +1,44 @@
+{
+  "name": "Product Tile",
+  "description": "Product tile",
+  "group": "Headless",
+  "attribute_definition_groups": [
+    {
+      "id": "product",
+      "name": "Product",
+      "attribute_definitions": [
+        {
+          "id": "product",
+          "name": "Product ID",
+          "type": "product",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "advanced",
+      "name": "Advanced Overrides",
+      "attribute_definitions": [
+        {
+          "id": "__containerStyles",
+          "name": "Container Style Config",
+          "type": "custom",
+          "editor_definition": {
+            "type": "styles.styleEditor"
+          },
+          "required": false
+        },
+        {
+          "id": "themeOverrides",
+          "name": "Chakra Theme Overrides",
+          "type": "custom",
+          "editor_definition": {
+            "type": "codeeditor.codeeditor"
+          },
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

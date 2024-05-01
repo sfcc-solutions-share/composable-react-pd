@@ -1,0 +1,51 @@
+{
+  "name": "Raw JSX",
+  "description": "Raw chakra UI markup in JSX form",
+  "group": "Headless",
+  "attribute_definition_groups": [
+    {
+      "id": "content",
+      "name": "Content",
+      "attribute_definitions": [
+        {
+          "id": "code",
+          "name": "JSX Code",
+          "type": "custom",
+          "editor_definition": {
+            "type": "codeeditor.codeeditor"
+          },
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "advanced",
+      "name": "Advanced Overrides",
+      "attribute_definitions": [
+        {
+          "id": "__containerStyles",
+          "name": "Container Style Config",
+          "type": "custom",
+          "editor_definition": {
+            "type": "styles.styleEditor"
+          },
+          "required": false
+        },
+        {
+          "id": "themeOverrides",
+          "name": "Chakra Theme Overrides",
+          "type": "custom",
+          "editor_definition": {
+            "type": "codeeditor.codeeditor",
+            "configuration": {
+              "language": "javascript-jsx",
+              "validateJavascript": true
+            }
+          },
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

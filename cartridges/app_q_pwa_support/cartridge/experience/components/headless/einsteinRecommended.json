@@ -1,0 +1,49 @@
+{
+  "name": "Einstein Recommended Products",
+  "description": "Recommender",
+  "group": "Headless",
+  "attribute_definition_groups": [
+    {
+      "id": "zoneGroup",
+      "name": "Zone Settings",
+      "description": "",
+      "attribute_definitions": [
+        {
+          "id": "zone",
+          "name": "Zone",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "advanced",
+      "name": "Advanced Overrides",
+      "attribute_definitions": [
+        {
+          "id": "__containerStyles",
+          "name": "Container Style Config",
+          "type": "custom",
+          "editor_definition": {
+            "type": "styles.styleEditor"
+          },
+          "required": false
+        },
+        {
+          "id": "themeOverrides",
+          "name": "Chakra Theme Overrides",
+          "type": "custom",
+          "editor_definition": {
+            "type": "codeeditor.codeeditor",
+            "configuration": {
+              "language": "javascript-jsx",
+              "validateJavascript": true
+            }
+          },
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

@@ -1,0 +1,91 @@
+{
+  "name": "Popular Categories",
+  "description": "Example headless component - categories",
+  "group": "Headless",
+  "attribute_definition_groups": [
+    {
+      "id": "heading",
+      "name": "Heading Text",
+      "description": "Specify the heading to be displayed above the category images",
+      "attribute_definitions": [
+        {
+          "id": "textHeadline",
+          "name": "Heading",
+          "type": "string",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "layout",
+      "name": "Layout",
+      "attribute_definitions": [
+        {
+          "id": "mobileColumns",
+          "name": "mobileColumns",
+          "type": "integer",
+          "default_value": 2,
+          "required": false
+        },
+        {
+          "id": "tabletColumns",
+          "name": "Tablet Columns",
+          "type": "integer",
+          "default_value": 3,
+          "required": false
+        },
+        {
+          "id": "desktopColumns",
+          "name": "Desktop Columns",
+          "type": "integer",
+          "default_value": 6,
+          "required": false
+        },
+        {
+          "id": "spacing",
+          "name": "Spacing Between Components",
+          "type": "integer",
+          "default_value": 10,
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "advanced",
+      "name": "Advanced Overrides",
+      "attribute_definitions": [
+        {
+          "id": "__containerStyles",
+          "name": "Container Style Config",
+          "type": "custom",
+          "editor_definition": {
+            "type": "styles.styleEditor"
+          },
+          "required": false
+        },
+        {
+          "id": "themeOverrides",
+          "name": "Chakra Theme Overrides",
+          "type": "custom",
+          "editor_definition": {
+            "type": "codeeditor.codeeditor",
+            "configuration": {
+              "language": "javascript-jsx",
+              "validateJavascript": true
+            }
+          },
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": [
+    {
+      "id": "categories",
+      "name": "categories",
+      "component_type_inclusions": [
+        {"type_id": "headless.popularCategory"}
+      ]
+    }
+  ]
+}

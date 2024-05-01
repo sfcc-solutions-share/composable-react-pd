@@ -1,0 +1,18 @@
+<iscomment>
+  Renders the content asset body as a string inside a JSON object; intent is to be
+  consumed by a headless app as a JSX string and rendered as a React component.
+
+  Multiple assets are joined with commas to be returned in an array by the slot
+  API.
+</iscomment>
+<isscript>
+  var content = slotcontent.content.toArray().map(function (content) {
+    return {
+      jsx: content.custom.body.markup,
+    }
+  })
+  var value = content.map(function (content) {
+    return JSON.stringify(content)
+  }).join(',')
+</isscript>
+<isprint value="${value}" encoding="off"/>

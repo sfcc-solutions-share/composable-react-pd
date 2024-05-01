@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<extensions xmlns="http://www.demandware.com/xml/bmmodules/2007-12-11" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.demandware.com/xml/bmmodules/2007-12-11 bmext.xsd">
+    <menuaction id="NoPermissionCheck" site="false">
+        <name xml:lang="x-default">Dummy</name>
+        <short_description xml:lang="x-default">dummy menu action that holds the pipelines which do not require a permission check</short_description>
+        <description xml:lang="x-default">dummy menu action that holds the pipelines which do not require a permission check.</description>
+        <sub-pipelines>
+            <pipeline name="PDSupport-GetSharedWorkerUrl" />
+            <pipeline name="SCAPIProxy-Call" />
+            <pipeline name="SCAPIProxy-Auth" />
+        </sub-pipelines>
+    </menuaction>
+</extensions>

@@ -1,0 +1,38 @@
+{
+  "name": "Einstein Chat Bot",
+  "description": "Extra component to add einstein bot to a site",
+  "group": "Headless",
+  "attribute_definition_groups": [
+    {
+      "id": "colors",
+      "name": "Colors",
+      "attribute_definitions": [
+        {
+          "id": "einsteinChatBotForeground",
+          "name": "Foreground Color",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "einsteinChatBotBackground",
+          "name": "Background Color",
+          "type": "string",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "code",
+      "name": "Code",
+      "attribute_definitions": [
+        {
+          "id": "einsteinChatBotScript",
+          "name": "Chat Bot Script",
+          "type": "text",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

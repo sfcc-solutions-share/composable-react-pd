@@ -1,0 +1,7 @@
+{
+    "name": "Code Editor",
+    "description": "Allows for editing of code",
+    "resources": {
+        "scripts": ["/experience/editors/codeeditor.js"]
+    }
+}

@@ -1,0 +1,14 @@
+<!-- don't actually render anything for real -->
+<isscript>
+    var regions = [];
+
+    if (pdict.regions) {
+        regions = Object.keys(pdict.regions);
+    }
+</isscript>
+<isloop items="${regions}" alias="region">
+    ${region}
+    <isif condition="${region !== 'container'}">
+        <isprint value="${pdict.regions[region].render()}" encoding="off"/>
+    </isif>
+</isloop>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="B2CCommerceCartridgesRoots">
+    <option name="cartridgesRoots">
+      <map>
+        <entry key="app_q_pwa_support" value="$PROJECT_DIR$/cartridges/app_q_pwa_support" />
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,14 @@
+{
+    "name":"Headless Theme",
+    "description":"For theming and branding a headless site",
+    "region_definitions":[
+      {
+        "id":"main",
+        "name":"Main Theme",
+        "max_components": 1,
+        "component_type_inclusions": [
+          {"type_id": "headless.theme"}
+        ]
+      }
+    ]
+}

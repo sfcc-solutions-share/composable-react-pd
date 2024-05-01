@@ -1,0 +1,63 @@
+{
+  "name": "Popular Category Component",
+  "description": "",
+  "group": "Headless",
+  "attribute_definition_groups": [
+    {
+      "id": "popularCategory",
+      "name": "Popular Category",
+      "description": "Specify the popular Category to be Displayed.",
+      "attribute_definitions": [
+        {
+          "id": "category",
+          "name": "Category",
+          "description": "Select Category to be displayed.",
+          "type": "category",
+          "required": true
+        },
+        {
+          "id": "catDisplayName",
+          "name": "Custom Display Name",
+          "description": "Overwrite the category name if needed.",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "image",
+          "name": "Image",
+          "type": "image",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "advanced",
+      "name": "Advanced Overrides",
+      "attribute_definitions": [
+        {
+          "id": "__containerStyles",
+          "name": "Container Style Config",
+          "type": "custom",
+          "editor_definition": {
+            "type": "styles.styleEditor"
+          },
+          "required": false
+        },
+        {
+          "id": "themeOverrides",
+          "name": "Chakra Theme Overrides",
+          "type": "custom",
+          "editor_definition": {
+            "type": "codeeditor.codeeditor",
+            "configuration": {
+              "language": "javascript-jsx",
+              "validateJavascript": true
+            }
+          },
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

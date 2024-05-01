@@ -1,0 +1,60 @@
+{
+  "name": "Product Scroller",
+  "description": "Product scroller grid",
+  "group": "Headless",
+  "attribute_definition_groups": [
+    {
+      "id": "products",
+      "name": "Products",
+      "attribute_definitions": [
+        {
+          "id": "products",
+          "name": "Product IDs (Comma separated)",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "content",
+      "name": "Content",
+      "attribute_definitions": [
+        {
+          "id": "heading",
+          "name": "Heading",
+          "type": "string",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "advanced",
+      "name": "Advanced Overrides",
+      "attribute_definitions": [
+        {
+          "id": "__containerStyles",
+          "name": "Container Style Config",
+          "type": "custom",
+          "editor_definition": {
+            "type": "styles.styleEditor"
+          },
+          "required": false
+        },
+        {
+          "id": "themeOverrides",
+          "name": "Chakra Theme Overrides",
+          "type": "custom",
+          "editor_definition": {
+            "type": "codeeditor.codeeditor",
+            "configuration": {
+              "language": "javascript-jsx",
+              "validateJavascript": true
+            }
+          },
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

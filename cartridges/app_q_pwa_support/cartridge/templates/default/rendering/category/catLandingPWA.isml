@@ -1,0 +1,5 @@
+<iscomment>This template is unused, it simply defined the slots for BM consumption</iscomment>
+<iscomment>
+<isslot id="pwa-category-header" context="category" description="Above the category search results" context-object="${pdict.category}"/>
+</iscomment>
+<isinclude template="rendering/category/catLanding" />

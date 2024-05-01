@@ -1,0 +1,40 @@
+<iscontent type="text/html" charset="UTF-8" compact="true" />
+<html lang="${require('dw/util/Locale').getLocale(request.getLocale()).getLanguage()}">
+<head>
+  <title>PAGE DESIGNER HEADLESS PAGE</title>
+</head>
+<body>
+
+<div class="headless-page-isml-harness container">
+  <div class="main-region-container" id="${pdict.page.ID}" style="">
+
+    <isset name="themePageID" value="${'pwa-theme-' + dw.system.Site.current.ID}" scope="page" />
+    <script>
+      window._headlessContext = <isprint value="${JSON.stringify(pdict.headlessContext, null, 2)}" encoding="off" />
+
+      window._themePage = null;
+      // The shared worker URL must come from BM context, hence the remote include
+      window._componentSharedWorkerUrl = "<isinclude url="${URLUtils.abs(new dw.web.URLAction('PDSupport-GetSharedWorkerUrl', 'Sites-Site'))}" encoding="off" />"
+      window._serializedPage = <isprint value="${dw.experience.PageMgr.serializePage(pdict.page.ID, null)}" encoding="off" />
+    </script>
+    <script>
+      // SLAS token comes from BM context only, hence the remote include
+      window._slasToken = <isinclude url="${URLUtils.abs(new dw.web.URLAction('SCAPIProxy-Auth', 'Sites-Site'), new dw.web.URLParameter('channel_id', dw.system.Site.current.ID))}" encoding="off" />
+    </script>
+    <isif condition="${dw.experience.PageMgr.getPage(themePageID)}">
+      <script>
+        window._themePage = <isprint value="${dw.experience.PageMgr.serializePage(themePageID, null)}" encoding="off" />
+      </script>
+    </isif>
+    <div id="headless-page-render-target"></div>
+  </div>
+</div>
+
+<div style="display: none">
+  <isprint value="${pdict.regions.main.render()}" encoding="off" />
+</div>
+
+<script src="${URLUtils.staticURL('js/composable/harness.js')}"/>
+</body>
+</html>
+

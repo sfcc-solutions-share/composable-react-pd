@@ -1,0 +1,83 @@
+{
+  "name": "Grid",
+  "description": "Simple Grid",
+  "group": "Headless",
+  "attribute_definition_groups": [
+    {
+      "id": "layout",
+      "name": "Layout",
+      "attribute_definitions": [
+        {
+          "id": "mobileColumns",
+          "name": "mobileColumns",
+          "type": "integer",
+          "default_value": 1,
+          "required": true
+        },
+        {
+          "id": "tabletColumns",
+          "name": "Tablet Columns",
+          "type": "integer",
+          "default_value": 2,
+          "required": true
+        },
+        {
+          "id": "desktopColumns",
+          "name": "Desktop Columns",
+          "type": "integer",
+          "default_value": 3,
+          "required": true
+        },
+        {
+          "id": "spacing",
+          "name": "Spacing Between Components",
+          "type": "integer",
+          "default_value": 20,
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "advanced",
+      "name": "Advanced Overrides",
+      "attribute_definitions": [
+        {
+          "id": "__containerStyles",
+          "name": "Container Style Config",
+          "type": "custom",
+          "editor_definition": {
+            "type": "styles.styleEditor"
+          },
+          "required": false
+        },
+        {
+          "id": "themeOverrides",
+          "name": "Chakra Theme Overrides",
+          "type": "custom",
+          "editor_definition": {
+            "type": "codeeditor.codeeditor",
+            "configuration": {
+              "language": "javascript-jsx",
+              "validateJavascript": true
+            }
+          },
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": [
+    {
+      "id": "main",
+      "name": "main",
+      "component_type_inclusions": [
+        {"type_id": "headless.banner"},
+        {"type_id": "headless.rawJSX"},
+        {"type_id": "headless.carousel"},
+        {"type_id": "headless.image"},
+        {"type_id": "headless.productTile"},
+        {"type_id": "headless.videoBanner"}
+      ]
+    }
+  ]
+}

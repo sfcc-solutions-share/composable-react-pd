@@ -1,0 +1,91 @@
+{
+  "name": "demo-storefront",
+  "version": "0.0.1",
+  "license": "See license in LICENSE",
+  "engines": {
+    "node": "^18.0.0 || ^20.0.0",
+    "npm": "^9.0.0 || ^10.0.0"
+  },
+  "ccExtensibility": {
+    "extends": "@salesforce/retail-react-app",
+    "overridesDir": "overrides"
+  },
+  "dependencies": {
+    "@salesforce/design-system-react": "^0.10.58",
+    "@codemirror/commands": "^6.1.2",
+    "@codemirror/lang-html": "^6.1.1",
+    "@codemirror/lang-javascript": "^6.1.1",
+    "@codemirror/lang-json": "^6.0.1",
+    "@codemirror/state": "^6.1.4",
+    "@codemirror/view": "^6.5.1",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.9",
+    "@uiw/react-codemirror": "^4.19.7",
+    "codemirror": "^6.0.1",
+    "commerce-sdk-isomorphic": "1.10.4",
+    "core-js": "2.4.0",
+    "css-loader": "^6.7.3",
+    "dotenv": "^16.4.1",
+    "enhanced-resolve": "^5.12.0",
+    "file-loader": "^6.2.0",
+    "focus-visible": "^5.2.0",
+    "hoist-non-react-statics": "^3.3.2",
+    "htm": "^3.1.1",
+    "html-webpack-plugin": "^5.5.0",
+    "http-proxy-middleware": "^2.0.2",
+    "inquirer": "^8.2.5",
+    "mini-css-extract-plugin": "^2.7.2",
+    "react-jsx-parser": "^1.29.0",
+    "react-refresh": "^0.14.0",
+    "style-loader": "^3.3.1",
+    "tinycolor2": "^1.4.2",
+    "tsconfig-paths-webpack-plugin": "^4.1.0",
+    "whatwg-fetch": "1.0.0",
+    "winston": "^3.7.2",
+    "write-file-webpack-plugin": "^4.5.1"
+  },
+  "devDependencies": {
+    "@salesforce/retail-react-app": "2.4.2",
+    "cross-env": "^5.2.1"
+  },
+  "overrides": {
+    "@salesforce-ux/design-system": "2.22.2"
+  },
+  "scripts": {
+    "analyze-build": "cross-env MOBIFY_ANALYZE=true npm run build",
+    "build": "npm run build-translations && pwa-kit-dev build",
+    "build-translations": "npm run extract-default-translations && npm run compile-translations && npm run compile-translations:pseudo",
+    "compile-translations": "node ./node_modules/@salesforce/retail-react-app/scripts/translations/compile-folder.js translations",
+    "compile-translations:pseudo": "node ./node_modules/@salesforce/retail-react-app/scripts/translations/compile-pseudo.js translations/en-US.json",
+    "extract-default-translations": "node ./node_modules/@salesforce/retail-react-app/scripts/translations/extract-default-messages.js en-US en-GB",
+    "format": "pwa-kit-dev format \"**/*.{js,jsx}\"",
+    "lint": "pwa-kit-dev lint \"**/*.{js,jsx}\"",
+    "lint:fix": "npm run lint -- --fix",
+    "postinstall": "npm run compile-translations && npm run compile-translations:pseudo",
+    "push": "npm run build && pwa-kit-dev push",
+    "save-credentials": "pwa-kit-dev save-credentials",
+    "start": "cross-env NODE_ICU_DATA=node_modules/full-icu pwa-kit-dev start",
+    "start:inspect": "npm run start -- --inspect",
+    "start:pseudolocale": "npm run extract-default-translations && npm run compile-translations:pseudo && cross-env USE_PSEUDOLOCALE=true npm run start",
+    "tail-logs": "pwa-kit-dev tail-logs",
+    "test": "pwa-kit-dev test",
+    "test:lighthouse": "cross-env NODE_ENV=production lhci autorun --config=tests/lighthouserc.js",
+    "test:max-file-size": "npm run build && bundlesize",
+    "build:harness": "HMR=false webpack-cli --config webpack.harness.config.js",
+    "watch:harness": "HMR=false webpack-cli --config webpack.harness.config.js --watch"
+  },
+  "bundlesize": [
+    {
+      "path": "build/main.js",
+      "maxSize": "43 kB"
+    },
+    {
+      "path": "build/vendor.js",
+      "maxSize": "320 kB"
+    }
+  ],
+  "browserslist": [
+    "iOS >= 9.0",
+    "Android >= 4.4.4",
+    "last 4 ChromeAndroid versions"
+  ]
+}

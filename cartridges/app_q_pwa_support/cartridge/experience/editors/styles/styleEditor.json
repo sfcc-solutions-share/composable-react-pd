@@ -1,0 +1,7 @@
+{
+    "name": "Style Editor",
+    "description": "Edit container and other general styles of attached component",
+    "resources": {
+        "scripts": ["/experience/editors/styleEditor.js"]
+    }
+}

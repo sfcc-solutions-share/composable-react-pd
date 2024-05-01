@@ -1,0 +1,8 @@
+{
+    "name": "Einstein",
+    "description": "Allows a user to select Einstein Recommender.",
+    "resources": {
+        "styles": ["https://cdnjs.cloudflare.com/ajax/libs/design-system/2.22.2/styles/salesforce-lightning-design-system.min.css"],
+        "scripts": ["/experience/editors/einstein.js"]
+    }
+}
