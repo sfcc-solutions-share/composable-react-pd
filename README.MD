@@ -148,18 +148,18 @@ MRT storefront preview purposes, although we require additional scopes*.
 ### Adding New Page Designer Components
 
 1. Create the component metadata file as normal with your component fields (i.e. `app_q_pwa_support/cartridge/experience/components/headless/banner.json`)
-   2. You can optionally make use of the custom editors provided for container style and Chakra theme overrides. See the `__containerStyles` and `themeOverrides` attributes in the example components provides.
+   - You can optionally make use of the custom editors provided for container style and Chakra theme overrides. See the `__containerStyles` and `themeOverrides` attributes in the example components provides.
       If present the solution will automatically provide this functionality through higher order components.
 2. Create a component script as normal. See the example `app_q_pwa_support/cartridge/experience/components/headless/banner.js`
-   3. Note that we do NOT need a unique `isml` file for each component. Use `experience/components/headlessComponent` instead
-   4. Note also the use of a serialization helper for links and images:
+   - Note that we do NOT need a unique `isml` file for each component. Use `experience/components/headlessComponent` instead
+   - Note also the use of a serialization helper for links and images:
       ```javascript
       module.exports.serialize = headlessComponentHelper.serializeHelper()
       ```
 3. Create your react frontend for the component. See the example `overrides/app/components/page-designer/headless/banner.js` as an example
 4. Finally, register your component type ID to it's corresponding react component in the [overrides/app/components/page-designer/support.js](./overrides/app/components/page-designer/support.js#L23) file under the `COMPONENTS` constant
 5. Rebuild the harness and upload the cartridge to your B2C instance
-   5. Note: you can use the `npm run watch:harness` script to watch for changes and rebuild automatically just like `npm start` is used for pwa-kit
+   - Note: you can use the `npm run watch:harness` script to watch for changes and rebuild automatically just like `npm start` is used for pwa-kit
 
 ### Support
 
