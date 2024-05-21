@@ -161,13 +161,27 @@ MRT storefront preview purposes, although we require additional scopes*.
 5. Rebuild the harness and upload the cartridge to your B2C instance
    - Note: you can use the `npm run watch:harness` script to watch for changes and rebuild automatically just like `npm start` is used for pwa-kit
 
+### Caveats
+
+- There are some differences between the data used in page designer and in the experience API. Namely, image type attributes contain a `path` in PD and a `url` in experience. For this it's recommended to use the `disBaseLink` custom attribute instead.
+  - An alternative is to use the experience API directly by disabling these lines: [./overrides/app/components/page-designer/pageDesignerPageContainer.js](./overrides/app/components/page-designer/pageDesignerPageContainer.js#L88). The side effect is that
+    you must PUBLISH your page to edit it.
+
+## License
+
+Licensed under the current NDA and licensing agreement in place with your organization. (This is explicitly **not** open
+source licensing.) This solution is based on code available at https://github.com/SalesforceCommerceCloud/pwa-kit using the BSD 3-clause license.
+
 ### Support
 
 **This project should not be treated as Salesforce Product.** It is an example implementation of composable storefront and
 related tools. Customers and partners implement this at-will with no expectation of roadmap, technical support,
 defect resolution, production-style SLAs.
 
-This project is maintained by the **Salesforce Community**, customer success and solutions. Salesforce Commerce Cloud or Salesforce Platform Technical
-Support can not support this project or its setup.
+This project is maintained by the **Salesforce Community**. Salesforce Commerce Cloud or Salesforce Platform Technical
+Support do not support this project or its setup.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
+
+For feature requests or bugs, please open a [GitHub issue](https://github.com/SalesforceCommerceCloud/composable-storefront-pocs/issues). 
+
