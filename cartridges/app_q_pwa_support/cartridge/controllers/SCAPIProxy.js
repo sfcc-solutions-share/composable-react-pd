@@ -81,12 +81,20 @@ function Auth() {
         return
     }
 
-    try {
-        const channelId = request.httpParameterMap.get('channel_id').stringValue
-        var token = SLASAuth.getSLASAuthToken(channelId)
-    } catch(e) {
-        dw.system.Logger.error(e)
-        response.getWriter().println(JSON.stringify(null, null, 4))
+    var attempts = 0
+    var token
+    while (attempts < 5) {
+        try {
+            const channelId = request.httpParameterMap.get('channel_id').stringValue
+            token = SLASAuth.getSLASAuthToken(channelId)
+            break
+        } catch(e) {
+            attempts++
+            dw.system.Logger.error(e)
+            if (attempts === 4) {
+                response.getWriter().println(JSON.stringify(null, null, 4))
+            }
+        }
     }
     // TODO send down signature-less token, store sig in session and recreate on call
     // (main issue is that the token is too big to store *entirely* in session)
