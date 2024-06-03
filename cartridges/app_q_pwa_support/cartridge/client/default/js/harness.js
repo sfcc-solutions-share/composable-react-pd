@@ -257,8 +257,8 @@ window.addEventListener('DOMContentLoaded', () => {
             const root = createRoot(element)
             const props = {
                 page: window._serializedPage,
-                editMode: window._isEditMode,
-                preview: window._isPreviewMode,
+                editMode: context.isEditMode,
+                preview: context.isPreviewMode,
                 themePage: window._themePage,
                 debug: false,
                 fetchedToken: window._slasToken?.access_token,
