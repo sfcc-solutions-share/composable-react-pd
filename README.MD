@@ -157,6 +157,7 @@ MRT storefront preview purposes, although we require additional scopes*.
       module.exports.serialize = headlessComponentHelper.serializeHelper()
       ```
 3. Create your react frontend for the component. See the example `overrides/app/components/page-designer/headless/banner.js` as an example
+4. Add your component type ID to the allowed list for `headlessPage`: `./cartridges/app_q_pwa_support/cartridge/experience/pages/headlessPage.json`
 4. Finally, register your component type ID to it's corresponding react component in the [overrides/app/components/page-designer/support.js](./overrides/app/components/page-designer/support.js#L23) file under the `COMPONENTS` constant
 5. Rebuild the harness and upload the cartridge to your B2C instance
    - Note: you can use the `npm run watch:harness` script to watch for changes and rebuild automatically just like `npm start` is used for pwa-kit
