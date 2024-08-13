@@ -2,6 +2,7 @@ var Template = require('dw/util/Template')
 var HashMap = require('dw/util/HashMap')
 var PageRenderHelper = require('*/cartridge/experience/utilities/PageRenderHelper.js')
 var HeadlessContextHelper = require('*/cartridge/experience/utilities/headlessContextHelper.js')
+var SLASAuth = require('*/cartridge/scripts/slas/auth')
 
 /**
  * Render logic for the storepage.
@@ -33,6 +34,25 @@ module.exports.render = function (context, modelIn) {
         PageRenderHelper.isInEditMode(),
         request.httpQueryString.indexOf('PREVIEW') > 0
     )
+
+    // ensure we don't render slas token outside of page designer (i.e. in a storefront context)
+    if (PageRenderHelper.isInEditMode()) {
+        var attempts = 0
+        while (attempts < 5) {
+            try {
+                const channelId = request.httpParameterMap.get('channel_id').stringValue
+                model.slasToken = SLASAuth.getSLASAuthToken(channelId)
+                break
+            } catch (e) {
+                attempts++
+                dw.system.Logger.error(e)
+                if (attempts === 4) {
+                    model.slasToken = null
+                }
+            }
+        }
+    }
+
 
     return new Template('experience/pages/headlessPage').render(model).text
 }

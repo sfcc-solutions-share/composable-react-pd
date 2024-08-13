@@ -56,9 +56,7 @@ exports.getHeadlessContext = function (isEditMode, isPreviewMode) {
         locale: headlessLocale,
         publicPath: URLUtils.httpsStatic('js/composable/').toString(),
         currentCurrency: session.currency.currencyCode,
-        scapiProxyEndpoint: URLUtils.abs(
-            new dw.web.URLAction('SCAPIProxy-Call', 'Sites-Site')
-        ).toString(),
+        scapiProxyEndpoint: URLUtils.abs('SCAPIProxy-Call').toString(),
 
         clientId: slasPrivateClientID,
         shortCode: shortCode,
