@@ -40,7 +40,7 @@ module.exports.render = function (context, modelIn) {
         var attempts = 0
         while (attempts < 5) {
             try {
-                const channelId = request.httpParameterMap.get('channel_id').stringValue
+                const channelId = dw.system.Site.current.ID
                 model.slasToken = SLASAuth.getSLASAuthToken(channelId)
                 break
             } catch (e) {
