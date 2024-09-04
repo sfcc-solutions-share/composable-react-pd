@@ -13,13 +13,13 @@
       window._headlessContext = <isprint value="${JSON.stringify(pdict.headlessContext, null, 2)}" encoding="off" />
 
       window._themePage = null;
-      // The shared worker URL must come from BM context, hence the remote include
-      window._componentSharedWorkerUrl = "<isinclude url="${URLUtils.abs(new dw.web.URLAction('PDSupport-GetSharedWorkerUrl', 'Sites-Site'))}" encoding="off" />"
+      // DISABLING SHARED WORKER for cross-domain page designer use (this disables the "live update functionality" only)
+      // Workaround would be to create a cross-domain message solution
       window._serializedPage = <isprint value="${dw.experience.PageMgr.serializePage(pdict.page.ID, null)}" encoding="off" />
     </script>
     <script>
       // SLAS token comes from BM context only, hence the remote include
-      window._slasToken = <isinclude url="${URLUtils.abs(new dw.web.URLAction('SCAPIProxy-Auth', 'Sites-Site'), new dw.web.URLParameter('channel_id', dw.system.Site.current.ID))}" encoding="off" />
+      window._slasToken = <isprint value="${JSON.stringify(pdict.slasToken, null, 2)}" encoding="off"/>
     </script>
     <isif condition="${dw.experience.PageMgr.getPage(themePageID)}">
       <script>

@@ -7,12 +7,6 @@ const SLASAuth = require('*/cartridge/scripts/slas/auth')
  * we must have a pairing fetch facade on the frontend to form the URL into a header
  */
 function Call() {
-    // should only be accessible in BM context
-    if (!session.userAuthenticated) {
-        response.setStatus(403)
-        return
-    }
-
     response.setContentType('application/json')
 
     // proxy will be called post only
